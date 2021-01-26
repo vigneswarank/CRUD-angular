@@ -1,0 +1,73 @@
+<div class="container-fluid mt-2 p-5">
+    <div class="row">
+        <div class="col- jumbotron" style="border-radius: 10px;">
+            <form [formGroup] ='userForm'>
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text"  formControlName='firstName' class="form-control">
+                </div>
+              <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" formControlName='lastName' class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Course</label>
+                    <input type="text"  formControlName='course' class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Mobile</label>
+                    <input type="text"  formControlName='mobile' class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="email"  formControlName='city' class="form-control">
+                </div>
+                <div class="form-group form-check">
+                </div>
+                <button type="submit" class="btn btn-success" (click) ="submit()">Submit</button>
+
+            </form>
+        </div>
+        <div class="col-8">
+            <table class="table table-striped">
+                <thead>
+
+                    <tr>
+                      
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Course</th>
+                        <th>Mobile</th>
+                        <th>city</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of userarray;let i =index;">
+                        <th>{{user.firstName}}</th>
+                        <th>{{user.lastName}}</th>
+                        <th>{{user.course}}</th>
+                        <th>{{user.mobile}}</th>
+                        <th>{{user.city}}</th>
+                        <th><button (click)='edituser(i)'>Edit</button></th>
+                        <th><button (click)='delete(i)'>delete</button></th>
+                        
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+                        
+        
+
+
+<input [(ngModel)]='user'>
+<button (click)='add()'>add</button>
+<div *ngFor="let user of users;let i =index;">
+    {{user}}
+    <button (click)='edit(i)'>edit</button>
+    <button (click)='remove(i)'>remove</button>
+</div>
